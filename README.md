@@ -1,4 +1,4 @@
-# comfyui文档
+# ComfyUI文档
 
 A static site base on [dumi](https://d.umijs.org).
 

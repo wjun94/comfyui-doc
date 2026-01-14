@@ -13,6 +13,6 @@ export default defineConfig({
   outputPath: 'dist', // Dumi 打包输出目录（默认就是 dist，可显式指定）
 
   themeConfig: {
-    name: 'comfyui文档',
+    name: 'ComfyUI',
   },
 });

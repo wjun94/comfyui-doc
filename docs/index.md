@@ -20,4 +20,4 @@ features:
     description: Put ! description here
 ---
 
-comfyui文档
+ComfyUI文档
