@@ -1,5 +1,6 @@
 ---
 title: A static site based on dumi
+description: 333
 hero:
   title: Site
   description: comfyui模型使用介绍

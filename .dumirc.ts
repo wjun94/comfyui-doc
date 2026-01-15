@@ -14,5 +14,49 @@ export default defineConfig({
 
   themeConfig: {
     name: 'ComfyUI',
+    // 文档根路径
+    sidebar: {
+      '/checkpoint': [
+        {
+          title: '模型',
+          children: [
+            {
+              title: '图生文',
+              link: '/checkpoint/text/01',
+              children: [
+                {
+                  title: '动漫',
+                  link: '/checkpoint/text/01',
+                  children: [
+                    {
+                      link: '/checkpoint/text/01-ace',
+                    },
+                  ],
+                },
+                {
+                  title: '全能',
+                  link: '/checkpoint/all/01-dreamshaper',
+                  children: [
+                    {
+                      link: '/checkpoint/text/01-dreamshaper',
+                    },
+                  ],
+                },
+                {
+                  title: 'Flux',
+                  link: '/checkpoint/flux/01-fp8',
+                  children: [
+                    {
+                      link: '/checkpoint/flux/01-fp8',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    // nav: [{ title: '模型', link: '/checkpoint/text/01-ace' }],
   },
 });
