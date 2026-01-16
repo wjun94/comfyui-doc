@@ -135,4 +135,4 @@ extra limbs, disfigured face, crossed eyes, overexposed, washed out colors, mess
 1.  **核心定位**：Illustrious-XL-v0.1.safetensors 是 SDXL 架构下的优质二次元插画模型，`safetensors` 格式安全高效，核心优势是高细节、稳五官、优色彩，适合二次元创作爱好者与商业插画从业者。
 2.  **关键要点**：使用时需必带专属触发词 `Illustrious style`，参数优先选择 DPM++ 2M Karras（20-30 步）、CFG 7-10、1024×1024 分辨率，搭配基础负面提示词规避核心瑕疵。
 3.  **优化核心**：通过「LoRA/Embedding 搭配」「提示词结构化」「后期微调」可大幅提升画面质量，低显存用户可借助 `xformers` 与「先小后大」策略解决显存不足问题。
-4.  **避坑提醒**：不适合写实类创作，避免高 CFG 值（>10）、过多冲突 LoRA 与冗长提示词，才能充分发挥模型的原生优势。s'sss
+4.  **避坑提醒**：不适合写实类创作，避免高 CFG 值（>10）、过多冲突 LoRA 与冗长提示词，才能充分发挥模型的原生优势。
