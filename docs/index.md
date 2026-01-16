@@ -6,7 +6,7 @@ hero:
   description: 全面的 ComfyUI 模型使用指南，涵盖各类模型的安装、配置与实践应用
   actions:
     - text: 快速开始
-      link: /guide
+      link: /start/guide
     - text: 模型列表
       link: /models
 features:

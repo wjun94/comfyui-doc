@@ -1,5 +1,6 @@
 ---
 title: 快速开始
+order: 1
 ---
 
 # ComfyUI 中文版快速开始指南
@@ -37,21 +38,7 @@ ComfyUI 是一款基于节点式工作流的 AI 图像生成工具，以灵活�
 便携版（Windows 用户推荐，快速上手）
 访问[ComfyUI 官方网站](https://www.comfy.org/zh-cn/download)，找到“便携版”下载入口，下载后直接解压到本地目录（如 D:\Apps\ComfyUI），无需额外安装依赖，解压即可使用。
 
-### 3.2 安装依赖（源码版/压缩包版）
-
-1. 进入 ComfyUI 安装目录（例如 Windows：D:\ComfyUI；Linux：~/ComfyUI）。
-
-2. Windows 用户：双击运行“requirements.txt”同级目录下的“install_windows.bat”批处理文件，程序将自动安装所需依赖（包括 PyTorch 等核心库）。
-
-3. Linux 用户：在终端中进入 ComfyUI 目录，输入命令：pip install -r requirements.txt，手动安装依赖。
-
-4. 中文用户优化：若安装依赖时网络较慢，可使用国内镜像源加速，命令示例：
-
-```bash
-$ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
-### 3.3 下载和放置模型文件
+### 3.2 下载和放置模型文件
 
 ComfyUI 默认不包含 AI 模型，需手动下载并放置到对应目录：
 
@@ -61,13 +48,13 @@ ComfyUI 默认不包含 AI 模型，需手动下载并放置到对应目录：
 
 3. （可选）如需使用 LoRA、ControlNet 等功能，分别将对应模型放置到“models/lora”“models/controlnet”目录；若使用通义万相相关模型，需按模型说明放置到对应子目录。
 
-### 3.4 启动 ComfyUI
+### 3.3 启动 ComfyUI
 
-1. Windows 用户：
+Windows 用户：
 
-   - 源码版/压缩包版：双击运行“run_nvidia_gpu.bat”（NVIDIA 显卡，推荐）、“run_nvidia_gpu_fast_fp16_accumulation.bat”（NVIDIA 显卡，显存较小用户）或“run_cpu.bat”（无显卡，速度极慢）。
+- 源码版/压缩包版：双击运行“run_nvidia_gpu.bat”（NVIDIA 显卡，推荐）、“run_nvidia_gpu_fast_fp16_accumulation.bat”（NVIDIA 显卡，显存较小用户）或“run_cpu.bat”（无显卡，速度极慢）。
 
-   - 便携版：直接进入解压目录，双击运行对应显卡的启动脚本即可。
+- 便携版：直接进入解压目录，双击运行对应显卡的启动脚本即可。
 
 # 四、界面基础认知（中文版）
 
@@ -75,11 +62,11 @@ ComfyUI 中文版界面核心分为 4 个区域，新手需重点熟悉：
 
 ### 4.1 节点面板（左侧）
 
-包含所有可用功能节点，按类别划分（如加载器、采样器、条件控制、工具等）：
+包含所有可用功能节点，按类别划分（如加载器、K 采样器、条件控制、工具等）：
 
 - 加载器（原 Loaders）：用于加载模型、VAE、CLIP 等核心组件。
 
-- 采样器（原 Sampling）：核心生成模块，控制采样器类型、步数、分辨率等参数。
+- K 采样器（原 Sampling）：核心生成模块，控制采样器类型、步数、分辨率等参数。
 
 - 条件控制（原 Conditioning）：用于输入正向提示词、反向提示词。
 
@@ -138,49 +125,7 @@ ComfyUI 中文版界面核心分为 4 个区域，新手需重点熟悉：
 
    - 底部结果面板显示生成进度，进度条完成后，即可在结果面板看到生成的图像，右键可保存到本地。
 
-## 六、常见问题与解决办法
-
-### 6.1 启动失败，提示“缺少 xxx 模块”
-
-原因：依赖未安装完整。解决办法：重新运行安装脚本（Windows）或执行“pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple”（国内镜像源加速），确保网络稳定，若某模块安装失败，可手动执行“pip install 模块名 -i 镜像源地址”单独安装。
-
-### 6.2 生成时提示“显存不足（Out of memory）”
-
-解决办法：
-
-- 降低图像分辨率（如从 1024×1024 改为 512×512）。
-
-- 减少采样步数（如从 50 步改为 25 步）。
-
-- 关闭其他占用显存的程序（如游戏、其他 AI 工具）。
-
-- 使用“FP16”精度（部分模型支持，可在模型加载器节点设置）；NVIDIA 显卡用户可尝试运行“run_nvidia_gpu_fast_fp16_accumulation.bat”启动脚本，降低显存占用。
-
-### 6.3 浏览器无法访问 ComfyUI 界面
-
-原因：端口被占用或启动失败。解决办法：
-
-- 检查启动日志，确认是否有“端口 8188 被占用（Port 8188 is in use）”提示，若有，关闭占用端口的程序，或修改 ComfyUI 启动端口（修改 main.py 中的“port=8188”为其他端口，如 8189）。
-
-- 确认启动命令正确，NVIDIA 显卡需运行“run_nvidia_gpu.bat”，避免误运行 CPU 版本脚本。
-
-### 6.4 生成图像模糊、质量差
-
-解决办法：
-
-- 提高采样步数（建议 ≥25 步）。
-
-- 更换更高质量的模型（如 SDXL 模型比 SD 1.5 模型质量更高，通义万相模型支持中英双语渲染，质量优异）。
-
-- 优化提示词，增加细节描述（如“高度细节，8k，超高清”）。
-
-- 调整采样器（推荐“DPM++ 2M Karras”“Euler a”）。
-
-### 6.5 中文提示词生成效果差
-
-原因：部分模型对中文支持不佳。解决办法：更换支持中英双语的模型（如通义万相、Z-Image-Turbo 等）；若使用其他模型，可尝试在中文提示词后补充英文关键词辅助生成。
-
-## 七、进阶学习方向
+## 六、进阶学习方向
 
 - 学习使用 ControlNet（姿态控制网络）：实现图像姿态、轮廓、深度等精准控制。
 
@@ -190,8 +135,8 @@ ComfyUI 中文版界面核心分为 4 个区域，新手需重点熟悉：
 
 - 模型优化：学习使用模型量化、FP16/FP8 精度等，平衡质量与速度。
 
-- 参考中文社区资源：[魔搭社区](https://www.modelscope.cn/models)（模型下载）、B 站（实操教程）、Civitai 中文区（工作流分享）、[ComfyUI 官方文档中文版](https://docs.comfy.org/zh-CN)。
+- 参考中文社区资源：[魔搭社区](https://www.modelscope.cn/models)（模型下载）、B 站（实操教程）、[Civitai 中文区](https://cvitai.cn/)（工作流分享）、[ComfyUI 官方文档中文版](https://docs.comfy.org/zh-CN)。
 
-## 八、总结
+## 七、总结
 
 ComfyUI 的核心优势在于节点式工作流的灵活性，中文用户入门关键是先掌握“加载模型 → 设置提示词 → 采样生成 → 保存图像”的基础流程，再逐步探索进阶功能。遇到问题时，优先查看启动日志和中文社区资源，多尝试调整参数、更换模型，就能快速提升使用熟练度。祝你在 ComfyUI 的创作之旅中顺利！
