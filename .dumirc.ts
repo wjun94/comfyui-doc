@@ -22,37 +22,32 @@ export default defineConfig({
       '/checkpoint': [
         {
           title: '模型',
+          order: 1,
           children: [
             {
-              title: '图生文',
+              title: '动漫',
               link: '/checkpoint/text/01-ace',
               children: [
                 {
-                  title: '动漫',
                   link: '/checkpoint/text/01-ace',
-                  children: [
-                    {
-                      link: '/checkpoint/text/01-ace',
-                    },
-                  ],
                 },
+              ],
+            },
+            {
+              title: '全能',
+              link: '/checkpoint/all/01-dreamshaper',
+              children: [
                 {
-                  title: '全能',
                   link: '/checkpoint/all/01-dreamshaper',
-                  children: [
-                    {
-                      link: '/checkpoint/all/01-dreamshaper',
-                    },
-                  ],
                 },
+              ],
+            },
+            {
+              title: 'Flux',
+              link: '/checkpoint/flux/01-fp8',
+              children: [
                 {
-                  title: 'Flux',
                   link: '/checkpoint/flux/01-fp8',
-                  children: [
-                    {
-                      link: '/checkpoint/flux/01-fp8',
-                    },
-                  ],
                 },
               ],
             },

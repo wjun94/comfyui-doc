@@ -4,6 +4,7 @@ toc: content
 order: 1
 group: 
   title: 全能
+  nav-order: 1
 ---
 
 # DreamShaper_8_pruned.safetensors 模型注释
