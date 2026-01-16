@@ -25,11 +25,11 @@ export default defineConfig({
           children: [
             {
               title: '图生文',
-              link: '/checkpoint/text/01',
+              link: '/checkpoint/text/01-ace',
               children: [
                 {
                   title: '动漫',
-                  link: '/checkpoint/text/01',
+                  link: '/checkpoint/text/01-ace',
                   children: [
                     {
                       link: '/checkpoint/text/01-ace',
@@ -41,7 +41,7 @@ export default defineConfig({
                   link: '/checkpoint/all/01-dreamshaper',
                   children: [
                     {
-                      link: '/checkpoint/text/01-dreamshaper',
+                      link: '/checkpoint/all/01-dreamshaper',
                     },
                   ],
                 },
