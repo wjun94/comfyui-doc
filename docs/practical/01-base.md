@@ -1,5 +1,5 @@
 ---
-title: 图生图简单案例
+title: 简单案例
 toc: content
 order: 1
 group:
@@ -22,9 +22,9 @@ group:
 
 ---
 
-![图片](/comfyui-doc/practical/image.png)
+![图片](/comfyui-doc/practical/img/image.png)
 
-[下载示例文件(JSON)](/practical/textToImg01.json)
+[下载示例文件(JSON)](/practical/json/textToImg01.json)
 
 ## 🧩 工作流节点详解
 
