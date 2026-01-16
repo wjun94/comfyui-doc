@@ -11,9 +11,12 @@ export default defineConfig({
   // publicPath: '/',
 
   outputPath: 'dist', // Dumi 打包输出目录（默认就是 dist，可显式指定）
+  favicons: ['/comfyui-doc/favicon.png'],
 
   themeConfig: {
     name: 'ComfyUI',
+    logo: '/comfyui-doc/favicon.png',
+    footer: 'Copyright © 2026.01.14 | Powered by ComfyUI',
     // 文档根路径
     sidebar: {
       '/checkpoint': [
