@@ -18,11 +18,8 @@ $ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 解决办法：
 
 - 降低图像分辨率（如从 1024×1024 改为 512×512）。
-
 - 减少采样步数（如从 50 步改为 25 步）。
-
 - 关闭其他占用显存的程序（如游戏、其他 AI 工具）。
-
 - 使用“FP16”精度（部分模型支持，可在模型加载器节点设置）；NVIDIA 显卡用户可尝试运行“run_nvidia_gpu_fast_fp16_accumulation.bat”启动脚本，降低显存占用。
 
 ### 3 浏览器无法访问 ComfyUI 界面
@@ -30,7 +27,6 @@ $ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 原因：端口被占用或启动失败。解决办法：
 
 - 检查启动日志，确认是否有“端口 8188 被占用（Port 8188 is in use）”提示，若有，关闭占用端口的程序，或修改 ComfyUI 启动端口（修改 main.py 中的“port=8188”为其他端口，如 8189）。
-
 - 确认启动命令正确，NVIDIA 显卡需运行“run_nvidia_gpu.bat”，避免误运行 CPU 版本脚本。
 
 ### 4 生成图像模糊、质量差
@@ -38,11 +34,8 @@ $ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 解决办法：
 
 - 提高采样步数（建议 ≥25 步）。
-
 - 更换更高质量的模型（如 SDXL 模型比 SD 1.5 模型质量更高，通义万相模型支持中英双语渲染，质量优异）。
-
 - 优化提示词，增加细节描述（如“高度细节，8k，超高清”）。
-
 - 调整采样器（推荐“DPM++ 2M Karras”“Euler a”）。
 
 ### 5 中文提示词生成效果差
