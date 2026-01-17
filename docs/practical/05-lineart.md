@@ -1,5 +1,5 @@
 ---
-title: 线稿上色
+title: Lineart 线稿上色
 toc: content
 order: 5
 group:
