@@ -44,6 +44,10 @@ group:
   ```
   beautiful scenery nature glass bottle landscape, purple galaxy bottle, masterpiece, best quality, realistic
   ```
+  - **反向提示词配置**：
+  ```
+  easynegative
+  ```
 - **连接逻辑**：`条件`输出 → K 采样器的`正面条件`输入
 
 ### 3. CLIP 文本编码（负面提示词）
