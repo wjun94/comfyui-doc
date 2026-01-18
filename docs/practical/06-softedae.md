@@ -11,6 +11,9 @@ group:
 ## 一、工作流概述
 本工作流实现**手绘动漫线稿到高质量彩色插画**的自动化生成，核心通过 **ControlNet Soft-Edge 模型** 约束原始线稿的柔和轮廓与笔触细节，结合 AnythingXL 动漫大模型与动漫专用 VAE，生成色彩鲜艳、保留线稿结构的动漫风格插画。
 
+![图片](/comfyui-doc/practical/img/softedae.png)
+[下载示例文件(JSON)](/practical/json/softedae.json)
+
 ---
 
 ## 二、节点功能与配置详解
