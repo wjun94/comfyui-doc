@@ -1,8 +1,8 @@
 {
-  "id": "5bb461c6-07db-4773-996b-1e9186125a56",
+  "id": "92d980bc-9103-41b4-b27c-df2dfd1339a1",
   "revision": 0,
-  "last_node_id": 16,
-  "last_link_id": 21,
+  "last_node_id": 17,
+  "last_link_id": 24,
   "nodes": [
     {
       "id": 2,
@@ -16,7 +16,7 @@
         270
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -43,7 +43,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -116,44 +116,6 @@
       ]
     },
     {
-      "id": 8,
-      "type": "CLIPTextEncode",
-      "pos": [
-        897.5395955593436,
-        933.2278714914661
-      ],
-      "size": [
-        425.27801513671875,
-        180.6060791015625
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 6
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            17
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "easynegative"
-      ]
-    },
-    {
       "id": 9,
       "type": "KSampler",
       "pos": [
@@ -165,7 +127,7 @@
         262
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -202,7 +164,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        511827091800714,
+        10695967774033,
         "randomize",
         25,
         6.5,
@@ -210,172 +172,6 @@
         "karras",
         1
       ]
-    },
-    {
-      "id": 10,
-      "type": "EmptyLatentImage",
-      "pos": [
-        1674.4646892268058,
-        1493.7891867341868
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 11
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 12
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            10
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ]
-    },
-    {
-      "id": 11,
-      "type": "LineartStandardPreprocessor",
-      "pos": [
-        1185.744861356829,
-        1339.9067213859394
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 13
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            15,
-            21
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LineartStandardPreprocessor"
-      },
-      "widgets_values": [
-        6,
-        8,
-        512
-      ]
-    },
-    {
-      "id": 12,
-      "type": "GetImageSize",
-      "pos": [
-        1872.6315002132883,
-        1679.239625459512
-      ],
-      "size": [
-        140,
-        124
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 14
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            11
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            12
-          ]
-        },
-        {
-          "name": "batch_size",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GetImageSize"
-      },
-      "widgets_values": [
-        "width: 447, height: 677\n batch size: 1"
-      ]
-    },
-    {
-      "id": 13,
-      "type": "PreviewImage",
-      "pos": [
-        1480.4797230370405,
-        1523.707673793122
-      ],
-      "size": [
-        140,
-        246.0000000000001
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 15
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
     },
     {
       "id": 15,
@@ -389,7 +185,7 @@
         186
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -445,51 +241,49 @@
       ]
     },
     {
-      "id": 16,
-      "type": "HEDPreprocessor",
+      "id": 1,
+      "type": "LoadImage",
       "pos": [
-        1490.6645625538238,
-        1336.17700658907
+        814.7355232159609,
+        1534.6506136149428
       ],
       "size": [
         270,
-        82
+        314.0000000000001
       ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 9,
+      "flags": {},
+      "order": 1,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 21
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            19
+            14,
+            23
           ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
         }
       ],
       "properties": {
-        "Node name for S&R": "HEDPreprocessor"
+        "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "enable",
-        512
+        "demo1.png",
+        "image"
       ]
     },
     {
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": [
-        935.844038624432,
-        659.5051198249284
+        832.3810315321473,
+        809.8193715979994
       ],
       "size": [
         425.27801513671875,
@@ -523,18 +317,83 @@
       ]
     },
     {
+      "id": 8,
+      "type": "CLIPTextEncode",
+      "pos": [
+        836.047395559344,
+        1107.9437303568213
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "easynegative"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "PreviewImage",
+      "pos": [
+        1904.9710472269448,
+        1431.0164132932068
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
       "id": 5,
       "type": "VAELoader",
       "pos": [
-        2009.1789307127701,
-        1459.7897064195959
+        2136.0675378050555,
+        1492.9759135118811
       ],
       "size": [
         270,
         58
       ],
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -558,15 +417,15 @@
       "id": 14,
       "type": "ControlNetLoader",
       "pos": [
-        1145.5835529090843,
-        1176.4222627691547
+        1341.7729529090846,
+        777.211010996084
       ],
       "size": [
         270,
         58
       ],
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -586,41 +445,141 @@
       ]
     },
     {
-      "id": 1,
-      "type": "LoadImage",
+      "id": 12,
+      "type": "GetImageSize",
       "pos": [
-        878.1799161236753,
-        1290.634006522658
+        1347.3122951070882,
+        1787.1925690056544
+      ],
+      "size": [
+        140,
+        124
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetImageSize"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1516.537108517578,
+        1548.546374819514
       ],
       "size": [
         270,
-        314.0000000000001
+        106
       ],
       "flags": {},
-      "order": 3,
+      "order": 8,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 11
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "HEDPreprocessor",
+      "pos": [
+        1459.5279703553379,
+        1378.050168291339
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            13,
-            14
+            19,
+            24
           ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "Node name for S&R": "HEDPreprocessor"
       },
       "widgets_values": [
-        "demo1.png",
-        "image"
+        "enable",
+        512
       ]
     }
   ],
@@ -714,26 +673,10 @@
       "INT"
     ],
     [
-      13,
-      1,
-      0,
-      11,
-      0,
-      "IMAGE"
-    ],
-    [
       14,
       1,
       0,
       12,
-      0,
-      "IMAGE"
-    ],
-    [
-      15,
-      11,
-      0,
-      13,
       0,
       "IMAGE"
     ],
@@ -778,10 +721,18 @@
       "VAE"
     ],
     [
-      21,
-      11,
+      23,
+      1,
       0,
       16,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      16,
+      0,
+      17,
       0,
       "IMAGE"
     ]
@@ -790,10 +741,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650709,
+      "scale": 0.6830134553650705,
       "offset": [
-        296.3946783130052,
-        -299.7136760683424
+        230.31008992740306,
+        -354.3481909007388
       ]
     },
     "workflowRendererVersion": "LG",

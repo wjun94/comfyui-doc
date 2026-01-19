@@ -1,7 +1,7 @@
 ---
 title: 姿态控制图像生成
 toc: content
-order: 6
+order: 7
 group:
   title: 实战
 ---
