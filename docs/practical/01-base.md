@@ -8,7 +8,7 @@ group:
 
 # ComfyUI 实战：生成「瓶中紫银河」风景图像
 
-comfyui中文版。跟据内容生成文档，并介绍下Soft-Edge模型
+comfyui 中文版。跟据内容生成文档，并介绍下 Soft-Edge 模型
 
 ## 🎯 项目概述
 
@@ -22,11 +22,13 @@ comfyui中文版。跟据内容生成文档，并介绍下Soft-Edge模型
 2. **模型资源**：下载`dreamshaper_8-全能.safetensors`模型，放置于 ComfyUI 的`models/checkpoints`目录
 3. **依赖验证**：确保 ComfyUI 启动时无报错，CLIP、VAE 组件自动加载正常
 
----
-
 ![图片](/comfyui-doc/practical/img/image.png)
 
 [下载示例文件(JSON)](/practical/json/textToImg01.json)
+
+<br />
+
+---
 
 ## 🧩 工作流节点详解
 
@@ -132,5 +134,3 @@ comfyui中文版。跟据内容生成文档，并介绍下Soft-Edge模型
 - **图像模糊/偏色**：增加采样步数（如 30 步），提升 CFG 值至 9-10，或更换调度器为`exponential`
 - **提示词不生效**：确认 CLIP 节点连线正常，提示词用逗号分隔关键词，避免中英文混排
 - **显存溢出**：降低图像尺寸至 384×384，关闭其他占用显存的程序
-
----

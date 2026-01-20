@@ -57,4 +57,8 @@ export default defineConfig({
     },
     // nav: [{ title: '模型', link: '/checkpoint/text/01-ace' }],
   },
+  // 引入全局样式文件，支持绝对路径或相对路径
+  styles: [
+    '/comfyui-doc/theme/global.css'
+  ]
 });
