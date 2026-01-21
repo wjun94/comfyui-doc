@@ -81,3 +81,32 @@
   /* 渐变版本 hover 效果 */
   /* background: linear-gradient(to right, transparent, #dcdcdc, transparent); */
 }
+
+img {
+  object-fit: contain;
+  height: max-content;
+}
+
+/* 全局 blockquote 基础样式 */
+blockquote {
+  border-left: 4px solid #409eff; /* 左侧醒目蓝色边框（可改颜色） */
+  background-color: #f5f8ff; /* 浅蓝背景，提升区分度 */
+  padding: 16px 20px; /* 内边距，避免内容拥挤 */
+  border-radius: 6px; /* 圆角，更现代 */
+  margin: 16px 0; /* 上下外边距，适配布局 */
+  color: #303133; /* 文字颜色，保证可读性 */
+  line-height: 1.6; /* 行高，提升阅读体验 */
+  font-size: 14px; /* 字体大小，与正文区分 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+}
+
+/* 嵌套 blockquote 样式（可选，区分层级） */
+blockquote blockquote {
+  border-left-color: #909399; /* 嵌套块用灰色边框 */
+  background-color: #f9f9f9; /* 浅灰背景 */
+}
+
+/* 清除 blockquote 内 p 标签的默认边距 */
+blockquote p {
+  margin: 0 !important;
+}
