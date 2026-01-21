@@ -29,7 +29,7 @@ group:
 
 - **画家：** 绘图模型
 - **画布：** 潜在空间
-- \*\*对画面的要求（提示词）：\*\*提示词，包括正向提示词（希望在画面中出现的元素）和负向提示词（不希望在画面中出现的元素）
+- **对画面的要求（提示词）：** 提示词，包括正向提示词（希望在画面中出现的元素）和负向提示词（不希望在画面中出现的元素）
 
 这个文本到图片图片生成过程，可以简单理解成你把你的**绘图要求(正向提示词、负向提示词)**告诉一个**画家(绘图模型)**，画家会根据你的要求，画出你想要的内容。
 
@@ -57,16 +57,16 @@ group:
 
 在完成了对应的绘图模型安装后，请参考下图步骤加载对应的模型，并进行第一次图片的生成
 
-<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=e0c8f5d7af48afa25076309392f02129" alt="图片生成" data-og-width="2640" width="2640" data-og-height="1384" height="1384" data-path="images/tutorial/gettingstarted/first-image-generation-7-queue.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=280&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=a2c75afbbad046faedacdc0d49847785 280w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=560&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=51baad1b8a08a3d07956f62cf18b11b5 560w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=840&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=b414fc5ca9f56a55bc317bfc9a6bc445 840w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=1100&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=16fff107aa1c88d7772c01adae99430f 1100w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=1650&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=3e6a2c94b9760ea8e4ca615a4d2be760 1650w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?w=2500&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=d8b83b791ae3a2cc979326454d6cc654 2500w" />
+<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=e0c8f5d7af48afa25076309392f02129" alt="图片生成" data-og-width="2640" width="2640" data-og-height="1384" height="1384" />
 
 请对应图片序号，完成下面操作
 
 1. 请在**Load Checkpoint** 节点使用箭头或者点击文本区域确保 **v1-5-pruned-emaonly-fp16.safetensors** 被选中，且左右切换箭头不会出现**null** 的文本
 2. 点击 `Queue` 按钮，或者使用快捷键 `Ctrl + Enter(回车)` 来执行图片生成
 
-等待对应流程执行完成后，你应该可以在界面的\*\*保存图像（Save Image）\*\*节点中看到对应的图片结果，可以在上面右键保存到本地
+等待对应流程执行完成后，你应该可以在界面的**保存图像（Save Image）**节点中看到对应的图片结果，可以在上面右键保存到本地
 
-<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=92b100190dd8f91abb37b01cc2e09a59" alt="ComfyUI 首次图片生成结果" data-og-width="2642" width="2642" data-og-height="1390" height="1390" data-path="images/tutorial/gettingstarted/first-image-generation-8-result.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=280&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=f0c2219d45e70c2f21ebd64032fddb50 280w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=560&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=9391713ee886380f8302e396975a94aa 560w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=840&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=ace21872a174725c45788b7ce5ce8a34 840w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=1100&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=a579037cd0b65cd2115280f8eee6e80b 1100w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=1650&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=8dba16d2de187f3f6356af67ee1040ef 1650w, https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?w=2500&fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=adfc35ce5d546ca79f140b45dee3fe2d 2500w" />
+<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-8-result.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=92b100190dd8f91abb37b01cc2e09a59" alt="ComfyUI 首次图片生成结果" />
 
 如果生成结果不满意，可以多运行几次图片生成，因为每次运行图片生成，**KSampler** 根据 `seed` 参数会使用不同的随机种子，所以每次生成的结果都会有所不同
 
@@ -74,7 +74,7 @@ group:
 
 你可以尝试修改**CLIP Text Encoder**处的文本
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=94d83f96b628279b5b2fc865d522886e" alt="CLIP Text Encoder" data-og-width="778" width="778" data-og-height="477" height="477" data-path="images/comfy_core/conditioning/clip_text_encode.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1d5e4f945f83db77e339f0301ffb365c 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=67671fa5fc37408cf9e2f315c8ff16f3 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=f3cb23d3f4aba2f500b2d350f0a2a7c3 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=a6fbf2d76a7722260d317152e5977c61 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=ef744de37e931396fa5e6417730d7e9e 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1cd01f8ad444d9a4c2a18dae3cb6b4b1 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=94d83f96b628279b5b2fc865d522886e" alt="CLIP Text Encoder" />
 
 其中连接到 KSampler 节点的`Positive`为正向提示词，连接到 KSampler 节点的`Negative`为负向提示词
 
@@ -164,11 +164,11 @@ G --> B
 
 ## ComfyUI 文生图工作流节点讲解
 
-<img src="https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=3e22321faba12644c781cecc5746a71e" alt="ComfyUI 文生图工作流讲解" data-og-width="2640" width="2640" data-og-height="1384" height="1384" data-path="images/tutorial/basic/text-image-workflow.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=280&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=00f7db5a22d5a7d186adee653c14761c 280w, https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=560&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=7fb01ec47ce2e701c513881a9e3f1e5b 560w, https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=840&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=25e071ca07a29643537ea8bdb3893cb3 840w, https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=1100&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=4fed435b700cfe00931c32027881b801 1100w, https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=1650&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=9c6ccc91e4d28cad1700033497cd6dfd 1650w, https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?w=2500&fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=5d3f62df6ef74b998814b604721c465f 2500w" />
+<img src="https://mintcdn.com/dripart/OltlUSVBSNcJsDMs/images/tutorial/basic/text-image-workflow.jpg?fit=max&auto=format&n=OltlUSVBSNcJsDMs&q=85&s=3e22321faba12644c781cecc5746a71e" alt="ComfyUI 文生图工作流讲解" />
 
 ### A. 加载模型（Load Checkpoint）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1a046abe89763dd49e42f2447974a1f8" alt="加载模型" data-og-width="807" width="807" data-og-height="384" height="384" data-path="images/comfy_core/loaders/load_checkpoint.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=24e18a1cdc77c62189fc29c677e7165e 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=dd577f103a62c2124ca61cde280cbe4e 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=3bdc09d0944ef1c60230e73a742c8621 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=7861410e82e36ff7dd08b5c3cbb842a6 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=8824a755aba210b2a804502b0d49f907 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=86d741df610277979074c4353306c907 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/loaders/load_checkpoint.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1a046abe89763dd49e42f2447974a1f8" alt="加载模型" />
 
 这个节点通常用于加载绘图模型, 通常 `checkpoint` 中会包含 `MODEL（UNet）`、`CLIP` 和 `VAE` 三个组件
 
@@ -178,7 +178,7 @@ G --> B
 
 ### B. 空 Latent 图像（Empty Latent Image）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=e40da4b9e1953fa2488277c47a310187" alt="空Latent图像" data-og-width="855" width="855" data-og-height="420" height="420" data-path="images/comfy_core/latent/empty_latent_image.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=f598f452e7fcd96ced27d409aa37f86a 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=b348ec3897d361910c46d1451782cc77 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=367ddd1429f0a9d5cade86c337ca7f27 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=ae1d7f0228de9d381974bdd4264aceb2 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=4bd95609794ead59eb95569f6442bb47 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=53285a3dfa681f7680a2a907707b176f 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/empty_latent_image.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=e40da4b9e1953fa2488277c47a310187" alt="空Latent图像" />
 
 定义一个潜在空间（Latent Space）,它输出到 KSampler 节点，空 Latent 图像节点构建的是一个 **纯噪声的潜在空间**
 
@@ -186,7 +186,7 @@ G --> B
 
 ### C. CLIP 文本编码器（CLIP Text Encoder）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=94d83f96b628279b5b2fc865d522886e" alt="CLIP文本编码器" data-og-width="778" width="778" data-og-height="477" height="477" data-path="images/comfy_core/conditioning/clip_text_encode.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1d5e4f945f83db77e339f0301ffb365c 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=67671fa5fc37408cf9e2f315c8ff16f3 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=f3cb23d3f4aba2f500b2d350f0a2a7c3 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=a6fbf2d76a7722260d317152e5977c61 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=ef744de37e931396fa5e6417730d7e9e 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=1cd01f8ad444d9a4c2a18dae3cb6b4b1 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/conditioning/clip_text_encode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=94d83f96b628279b5b2fc865d522886e" alt="CLIP文本编码器" />
 
 用于编码提示词，也就是输入你对画面的要求
 
@@ -197,7 +197,7 @@ G --> B
 
 ### D. K 采样器（KSampler）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=aed5e1f863c37948107cfcb3458955b7" alt="K 采样器" data-og-width="854" width="854" data-og-height="767" height="767" data-path="images/comfy_core/sampling/k_sampler.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=f891fb24b7fcbb6616bad811d797cd10 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=d3597cfd9ef1b324ceb8b8e529246540 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=e714d81c3a3214ef9fe1da89cdc2efd3 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=5001918af1c739866639c03df51a3c19 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=ff62cab54c0c1fa1432d98c69877706d 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=350b8494ce4c1e004ddd94f7977563d7 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/sampling/k_sampler.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=aed5e1f863c37948107cfcb3458955b7" alt="K 采样器" />
 
 **K 采样器** 是整个工作流的核心，整个噪声降噪的过程都在这个节点中完成，并最后输出一个潜空间图像
 
@@ -231,19 +231,19 @@ KSampler 节点的参数说明如下
 
 ### E. VAE 解码（VAE Decode）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=a9c0a75f0e442062a837289c5639a205" alt="VAE 解码" data-og-width="854" width="854" data-og-height="370" height="370" data-path="images/comfy_core/latent/vae_decode.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=2f0afe5cd50c2c9ca8b99a19b72e7add 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=08f5dc2c949c7b17285c0bf5c1727d58 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=49bf1587c6eefcb9834168b240a50beb 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=cbf29d240a132456bbdf3a1a397b4a15 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=bd71062051c89305967dbbef0ec36d08 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=d07f2b9bfb33486727f2ad936277eabd 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/latent/vae_decode.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=a9c0a75f0e442062a837289c5639a205" alt="VAE 解码" />
 
 将 **K 采样器(KSampler)** 输出的潜在空间图像转换为像素空间图像
 
 ### F. 保存图像（Save Image）节点
 
-<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=986a4163337dce0354c90b4bfb4471b2" alt="保存图像" data-og-width="854" width="854" data-og-height="410" height="410" data-path="images/comfy_core/image/save_image.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=280&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=ca1af2cc43f687bf101878f2f20c67b8 280w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=560&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=5928edfb970bf83050ba0c2f37756bac 560w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=840&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=4f06fdc7b9d3452aa2ee19621c014c09 840w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=1100&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=b2c95b4fff95a5c73c77db8ad148b947 1100w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=1650&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=fcab88dcda0bd79518bbafc0a4e791b8 1650w, https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?w=2500&fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=3a1d97fbb025ba4129567ed912cc2f84 2500w" />
+<img src="https://mintcdn.com/dripart/Rig0_LOInmwVbVSB/images/comfy_core/image/save_image.jpg?fit=max&auto=format&n=Rig0_LOInmwVbVSB&q=85&s=986a4163337dce0354c90b4bfb4471b2" alt="保存图像" />
 
 预览并保存从潜空间解码的图像，并保存到本地`ComfyUI/output`文件夹下
 
 ## SD1.5 模型简介
 
-**SD1.5(Stable Diffusion 1.5)** 是一个由[Stability AI](https://stability.ai/)开发的 AI 绘图模型，Stable Diffusion 系列的基础版本，基于 **512×512** 分辨率图片训练，所以其对 **512×512** 分辨率图片生成支持较好，体积约为 4GB，可以在\*\*消费级显卡（如 6GB 显存）\*\*上流畅运行。目前 SD1.5 的相关周边生态非常丰富，它支持广泛的插件（如 ControlNet、LoRA）和优化工具。
+**SD1.5(Stable Diffusion 1.5)** 是一个由[Stability AI](https://stability.ai/)开发的 AI 绘图模型，Stable Diffusion 系列的基础版本，基于 **512×512** 分辨率图片训练，所以其对 **512×512** 分辨率图片生成支持较好，体积约为 4GB，可以在**消费级显卡（如 6GB 显存）**上流畅运行。目前 SD1.5 的相关周边生态非常丰富，它支持广泛的插件（如 ControlNet、LoRA）和优化工具。
 作为 AI 绘画领域的里程碑模型，SD1.5 凭借其开源特性、轻量架构和丰富生态，至今仍是最佳入门选择。尽管后续推出了 SDXL/SD3 等升级版本，但其在消费级硬件上的性价比仍无可替代。
 
 ### 基础信息
