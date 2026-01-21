@@ -1,0 +1,112 @@
+.dumi-default-layout-content .markdown {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #24292e;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  border-bottom: none;
+}
+
+.markdown h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.markdown a {
+  color: #1890ff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #096dd9;
+  }
+}
+
+.markdown .dumi-code {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin: 1.5rem 0;
+  border: none;
+  background-color: #f6f8fa !important;
+}
+
+.markdown table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 12px 16px;
+  border: 1px solid #e8e8e8;
+  text-align: left;
+}
+
+.markdown table th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+/* 优化 Markdown 中的 hr 样式（核心选择器：.markdown hr，确保命中） */
+.dumi-default-content .markdown hr {
+  /* 1. 重置默认样式（清除浏览器和 dumi 自带的边框、外边距） */
+  border: none;
+  outline: none;
+  margin: 2rem auto; /* 上下外边距，适配 Markdown 正文行高，居中对齐 */
+
+  /* 2. 自定义核心样式（纯色分割线，简洁大气） */
+  height: 1px; /* 分割线高度 */
+  background-color: #e8e8e8; /* 分割线颜色，和表格边框色保持一致，视觉统一 */
+
+  /* 3. 可选：添加宽度限制，避免分割线过宽 */
+  width: 95%; /* 略小于 Markdown 容器宽度，更美观 */
+
+  /* 4. 可选：添加轻微渐变，提升视觉层次感（替代纯色背景） */
+  /* background: linear-gradient(to right, transparent, #e8e8e8, transparent); */
+}
+
+/* 可选：hover 交互效果，增强体验 */
+.dumi-default-content .markdown hr:hover {
+  background-color: #dcdcdc; /* 鼠标悬浮加深颜色 */
+  /* 渐变版本 hover 效果 */
+  /* background: linear-gradient(to right, transparent, #dcdcdc, transparent); */
+}
+
+img {
+  object-fit: contain;
+  height: max-content;
+}
+
+/* 全局 blockquote 基础样式 */
+blockquote {
+  border-left: 4px solid #409eff; /* 左侧醒目蓝色边框（可改颜色） */
+  background-color: #f5f8ff; /* 浅蓝背景，提升区分度 */
+  padding: 16px 20px; /* 内边距，避免内容拥挤 */
+  border-radius: 6px; /* 圆角，更现代 */
+  margin: 16px 0; /* 上下外边距，适配布局 */
+  color: #303133; /* 文字颜色，保证可读性 */
+  line-height: 1.6; /* 行高，提升阅读体验 */
+  font-size: 14px; /* 字体大小，与正文区分 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+}
+
+/* 嵌套 blockquote 样式（可选，区分层级） */
+blockquote blockquote {
+  border-left-color: #909399; /* 嵌套块用灰色边框 */
+  background-color: #f9f9f9; /* 浅灰背景 */
+}
+
+/* 清除 blockquote 内 p 标签的默认边距 */
+blockquote p {
+  margin: 0 !important;
+}
