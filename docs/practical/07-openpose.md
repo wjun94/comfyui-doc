@@ -17,6 +17,7 @@ group:
 
 ![图片](/comfyui-doc/practical/img/openpose.png)
 [下载示例文件(JSON)](/practical/json/openpose.json)
+<a href="/comfyui-doc/practical/json/openpose.json" target="_blank" >下载示例文件(JSON)</a>
 
 ---
 

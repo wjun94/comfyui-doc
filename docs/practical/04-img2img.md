@@ -22,7 +22,7 @@ group:
 ---
 
 ![图片](/comfyui-doc/practical/img/img2img.png)
-[下载示例文件(JSON)](/practical/json/img2img.json)
+<a href="/comfyui-doc/practical/json/img2img.json" target="_blank" >下载示例文件(JSON)</a>
 
 ## 📋 前置准备
 

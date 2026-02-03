@@ -24,7 +24,7 @@ comfyui 中文版。跟据内容生成文档，并介绍下 Soft-Edge 模型
 
 ![图片](/comfyui-doc/practical/img/image.png)
 
-[下载示例文件(JSON)](/practical/json/textToImg01.json)
+<a href="/comfyui-doc/practical/json/textToImg01.json" target="_blank" >下载示例文件(JSON)</a>
 
 <br />
 
