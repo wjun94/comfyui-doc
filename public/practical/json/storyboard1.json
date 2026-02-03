@@ -1,0 +1,266 @@
+{
+  "last_node_id": 40,
+  "config": {},
+  "groups": [
+    {
+      "title": "【1.基础模型加载】",
+      "bounding": [30, 30, 280, 120],
+      "color": "#3498db",
+      "nodes": [1]
+    },
+    {
+      "title": "【2.全局提示词配置】",
+      "bounding": [230, 30, 280, 180],
+      "color": "#2ecc71",
+      "nodes": [2, 3]
+    },
+    {
+      "title": "【3.分镜提示词迭代器（9镜核心）】",
+      "bounding": [420, 30, 320, 200],
+      "color": "#f39c12",
+      "nodes": [4, 5, 6]
+    },
+    {
+      "title": "【4.角色一致性控制（IPAdapter）】",
+      "bounding": [30, 280, 320, 220],
+      "color": "#9b59b6",
+      "nodes": [7, 8, 9]
+    },
+    {
+      "title": "【5. latent 与采样生成】",
+      "bounding": [420, 280, 380, 220],
+      "color": "#e74c3c",
+      "nodes": [10, 11, 12]
+    },
+    {
+      "title": "【6.分镜排版与最终输出】",
+      "bounding": [820, 380, 420, 180],
+      "color": "#1abc9c",
+      "nodes": [13, 14, 15]
+    }
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [50, 50],
+      "notes": "【核心】加载主模型（Checkpoint），同步输出 MODEL/CLIP/VAE 三大基础组件，需替换为本地写实/漫画模型",
+      "inputs": {
+        "ckpt_name": "realisticVisionV51_v51VAE.safetensors"
+      },
+      "outputs": [
+        { "name": "MODEL", "type": "MODEL" },
+        { "name": "CLIP", "type": "CLIP" },
+        { "name": "VAE", "type": "VAE" }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CLIPTextEncode",
+      "pos": [250, 50],
+      "notes": "【全局正向提示词】所有分镜通用的基础画质+风格词，统一9镜的整体质感与分镜属性",
+      "inputs": {
+        "text": "masterpiece, best quality, movie storyboard, 3x3 grid storyboard, professional cinematography, 8k, high detail, consistent character design, cinematic lighting, sharp focus",
+        "clip": [1, 1]
+      },
+      "outputs": [{ "name": "CONDITIONING", "type": "CONDITIONING" }]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [250, 150],
+      "notes": "【全局负向提示词】统一屏蔽低质、变形、水印等问题，提升所有分镜的基础质量",
+      "inputs": {
+        "text": "worst quality, low quality, blurry, deformed, disfigured, ugly, watermark, text, signature, mutated hands, extra limbs",
+        "clip": [1, 1]
+      },
+      "outputs": [{ "name": "CONDITIONING", "type": "CONDITIONING" }]
+    },
+    {
+      "id": 4,
+      "type": "PromptIterator",
+      "pos": [450, 50],
+      "notes": "【9镜核心】批量迭代9条分镜提示词，自动分配独立种子，loop_count=9 对应生成9张分镜图，可修改每条SCENE的场景/镜头/动作",
+      "inputs": {
+        "prompts": "[SCENE-1] Wide establishing shot of a futuristic cyberpunk city at night, neon skyscrapers towering, flying cars passing by, wet reflective streets, low angle, dramatic neon lighting\n[SCENE-2] Medium shot of female protagonist (20s, black leather jacket, neon hair) walking through the city, hands in pockets, determined expression, side profile, rain falling\n[SCENE-3] Close-up of protagonist's face, eyes focused forward, rain drops on cheeks, subtle neon light reflection in eyes, shallow depth of field\n[SCENE-4] Over-the-shoulder shot of protagonist looking at a glowing holographic billboard, city lights blurred in background, medium close-up\n[SCENE-5] Medium wide shot of protagonist entering a dark alley, head turned slightly, shadowy figures in distance, tense atmosphere, high contrast lighting\n[SCENE-6] Low angle shot of protagonist pausing, hand hovering near a hidden weapon at her waist, alert expression, dramatic key light from above\n[SCENE-7] Extreme close-up of protagonist's gloved hand gripping the weapon, metallic texture, neon light glinting off the surface\n[SCENE-8] Medium shot of protagonist stepping forward into the alley's darkness, silhouette against distant neon lights, dynamic pose, ready for action\n[SCENE-9] Wide shot of the alley's end, protagonist walking toward a bright exit, city skyline visible in the distance, hopeful tone, warm backlighting",
+        "seed": 123456,
+        "mode": "Sequential",
+        "loop_count": 9
+      },
+      "outputs": [
+        { "name": "POSITIVE", "type": "STRING" },
+        { "name": "NEGATIVE", "type": "STRING" },
+        { "name": "SEED", "type": "INT" }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [650, 50],
+      "notes": "【分镜正向编码】接收迭代器的单条分镜提示词，与全局正向词结合，生成单镜有效条件",
+      "inputs": {
+        "text": [4, 0],
+        "clip": [1, 1]
+      },
+      "outputs": [{ "name": "CONDITIONING", "type": "CONDITIONING" }]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [650, 150],
+      "notes": "【分镜负向编码】复用全局负向词，确保单镜生成质量一致",
+      "inputs": {
+        "text": [4, 1],
+        "clip": [1, 1]
+      },
+      "outputs": [{ "name": "CONDITIONING", "type": "CONDITIONING" }]
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [50, 300],
+      "notes": "【角色参考图】加载固定角色的参考图（正面/全身最佳），用于IPAdapter锁定角色外观，需替换为本地input文件夹内的图片",
+      "inputs": {
+        "image": "your_character_reference.png"
+      },
+      "outputs": [
+        { "name": "IMAGE", "type": "IMAGE" },
+        { "name": "MASK", "type": "MASK" }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "IPAdapterModelLoader",
+      "pos": [50, 400],
+      "notes": "【IPAdapter模型加载】加载IP-Adapter基础模型，推荐ip-adapter-plus_sd15，适配SD1.5模型的角色一致性控制",
+      "inputs": {
+        "ipadapter_file": "ip-adapter-plus_sd15.safetensors"
+      },
+      "outputs": [{ "name": "IPADAPTER", "type": "IPADAPTER" }]
+    },
+    {
+      "id": 9,
+      "type": "IPAdapterApply",
+      "pos": [250, 300],
+      "notes": "【角色一致性应用】将参考图特征注入生成模型，weight=0.75 平衡角色统一与画面灵活性，start_at/end_at控制作用时段",
+      "inputs": {
+        "ipadapter": [8, 0],
+        "image": [7, 0],
+        "model": [1, 0],
+        "weight": 0.75,
+        "noise": 0.0,
+        "start_at": 0.0,
+        "end_at": 0.8
+      },
+      "outputs": [{ "name": "MODEL", "type": "MODEL" }]
+    },
+    {
+      "id": 10,
+      "type": "EmptyLatentImage",
+      "pos": [450, 300],
+      "notes": "【 latent 初始化】定义单张分镜的基础分辨率，768×768 适配SD1.5，显存不足可改为640×640，batch_size=1 逐一生成",
+      "inputs": {
+        "width": 768,
+        "height": 768,
+        "batch_size": 1
+      },
+      "outputs": [{ "name": "LATENT", "type": "LATENT" }]
+    },
+    {
+      "id": 11,
+      "type": "KSampler",
+      "pos": [650, 300],
+      "notes": "【图像采样】核心生成节点，接收迭代种子+正负条件+IPAdapter模型，steps=28、cfg=8 兼顾画质与速度，采样器用dpmpp_2m_sde_gpu",
+      "inputs": {
+        "model": [9, 0],
+        "positive": [5, 0],
+        "negative": [6, 0],
+        "latent_image": [10, 0],
+        "seed": [4, 2],
+        "steps": 28,
+        "cfg": 8.0,
+        "sampler_name": "dpmpp_2m_sde_gpu",
+        "scheduler": "karras",
+        "denoise": 1.0
+      },
+      "outputs": [{ "name": "LATENT", "type": "LATENT" }]
+    },
+    {
+      "id": 12,
+      "type": "VAEDecode",
+      "pos": [850, 300],
+      "notes": "【VAE解码】将 latent 特征图解码为可视图像，复用主模型自带VAE，保证画质统一",
+      "inputs": {
+        "samples": [11, 0],
+        "vae": [1, 0]
+      },
+      "outputs": [{ "name": "IMAGE", "type": "IMAGE" }]
+    },
+    {
+      "id": 13,
+      "type": "CR_ImageList",
+      "pos": [850, 400],
+      "notes": "【分镜图像汇总】收集迭代生成的9张分镜图，按顺序存入图像列表，为后续排版做准备",
+      "inputs": {
+        "image_1": [12, 0],
+        "image_2": null,
+        "image_3": null,
+        "image_4": null,
+        "image_5": null,
+        "image_6": null,
+        "image_7": null,
+        "image_8": null,
+        "image_9": null
+      },
+      "outputs": [{ "name": "IMAGE_LIST", "type": "IMAGE_LIST" }]
+    },
+    {
+      "id": 14,
+      "type": "CR_ComicPanelTemplates",
+      "pos": [1050, 400],
+      "notes": "【3×3排版核心】将9张分镜自动拼接为3行3列网格，可调整border_thickness（边框厚度）、border_color（边框色）、margin（分镜间距）",
+      "inputs": {
+        "image_list": [13, 0],
+        "template": "3x3 Grid",
+        "border_thickness": 3,
+        "border_color": "#000000",
+        "background_color": "#FFFFFF",
+        "margin": 10,
+        "padding": 5
+      },
+      "outputs": [
+        { "name": "IMAGE", "type": "IMAGE" },
+        { "name": "PANEL_DATA", "type": "STRING" }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PreviewImage",
+      "pos": [1250, 400],
+      "notes": "【最终输出预览】显示拼接完成的9镜分镜成品，可右键保存图像",
+      "inputs": {
+        "images": [14, 0]
+      }
+    }
+  ],
+  "links": [
+    [1, 0, 9, 2],
+    [1, 1, 2, 0],
+    [1, 1, 3, 0],
+    [1, 1, 5, 0],
+    [1, 1, 6, 0],
+    [1, 2, 12, 0],
+    [2, 0, 5, 0],
+    [3, 0, 6, 0],
+    [4, 0, 5, 0],
+    [4, 1, 6, 0],
+    [4, 2, 11, 4],
+    [7, 0, 9, 1],
+    [8, 0, 9, 0],
+    [10, 0, 11, 3],
+    [11, 0, 12, 0],
+    [12, 0, 13, 0],
+    [13, 0, 14, 0],
+    [14, 0, 15, 0]
+  ]
+}
