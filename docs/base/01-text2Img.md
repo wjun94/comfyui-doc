@@ -57,7 +57,7 @@ group:
 
 在完成了对应的绘图模型安装后，请参考下图步骤加载对应的模型，并进行第一次图片的生成
 
-<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=e0c8f5d7af48afa25076309392f02129" alt="图片生成" data-og-width="2640" width="2640" data-og-height="1384" height="1384" />
+<img src="https://mintcdn.com/dripart/TwfNQ2dEaWQA7tIL/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg?fit=max&auto=format&n=TwfNQ2dEaWQA7tIL&q=85&s=e0c8f5d7af48afa25076309392f02129" alt="图片生成" />
 
 请对应图片序号，完成下面操作
 
